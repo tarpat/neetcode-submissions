@@ -1,0 +1,11 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hm = dict()
+        # stores number -> idx
+
+        for i, num in enumerate(nums):
+            if target - num in hm:
+                return [hm[target - num], i]
+            hm[num] = i
+        
+        return [0, 0]
